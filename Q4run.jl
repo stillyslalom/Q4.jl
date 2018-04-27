@@ -25,7 +25,6 @@ function runtrials(res)
 end
 
 @time p, err, t = runtrials(res)
-p[4]
 plot(p[1], p[2], p[3], p[4], layout = @layout([a b; c d]))
 pdf("p4_soln")
 
@@ -33,10 +32,3 @@ plot(res, [err (res).^-2.0], xaxis=:log2, yaxis=:log2, legend=false,
     xlab=L"\mathrm{N_{elements}}", ylab=L"\mathrm{Error}")
 pdf("p4error")
 
-r = 4
-xx = linspace(0, 1, r + 1)
-yy = linspace(0, 1, r ÷ 2)
-A, b = Q4(f, xx, yy); sol = A\b
-u = reshape(A\b, (r+1, r÷2))
-
-f.(xx,yy')
