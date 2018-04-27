@@ -15,7 +15,7 @@ function runtrials(res)
         A, b = Q4(f, xx, yy); sol = A\b
         push!(t, toc())
 
-        u = reshape(A\b, (r+1, r÷2))
+        u = reshape(sol, (r+1, r÷2))
         push!(p, heatmap(xx, yy, u', aspect_ratio=:equal,
               xlab=L"x", ylab=L"y", title="$(r^2) elements", legendtitle=L"u(x,y)"))
 
