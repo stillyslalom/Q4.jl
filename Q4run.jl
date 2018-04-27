@@ -1,7 +1,7 @@
 using Plots, LaTeXStrings
 import Plots.pdf
 cd(@__DIR__)
-include("p4.jl")
+include("Q4.jl")
 
 f(x, y) = cos(π*x) - cos(π*y)
 res = [4, 8, 16, 32]
